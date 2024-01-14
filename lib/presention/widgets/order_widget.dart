@@ -4,13 +4,23 @@ import 'package:flutter/material.dart';
 import 'color_widget.dart';
 
 class OrderWidget extends StatelessWidget {
-  const OrderWidget({super.key});
+  const OrderWidget({
+    super.key,
+    this.color,
+    required this.name,
+    required this.price,
+    required this.image,
+  });
+  final Color? color;
+  final String name;
+  final String price;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.asset('assets/image/attractive.png'),
+        Image.asset(image),
         const SizedBox(width: 15),
         Expanded(
             child: Row(
@@ -18,21 +28,20 @@ class OrderWidget extends StatelessWidget {
           children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Jacket Jeans',
+                  name,
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 Text(
-                  '\$37.9',
+                  price,
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    ColorWidget(
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
+                    ColorWidget(color: color),
                     const SizedBox(width: 15),
                     const SizeWidget('S')
                   ],
@@ -41,12 +50,16 @@ class OrderWidget extends StatelessWidget {
             ),
             Align(
               alignment: Alignment.topLeft,
-              child: Icon(
-                Icons.delete_outline,
-                color: Theme.of(context).colorScheme.primary,
-                size: 36,
+              child: InkWell(
+                borderRadius: BorderRadius.circular(20),
+                onTap: () {},
+                child: Icon(
+                  Icons.delete_outline,
+                  color: Theme.of(context).colorScheme.primary,
+                  size: 36,
+                ),
               ),
-            )
+            ),
           ],
         ))
       ],
