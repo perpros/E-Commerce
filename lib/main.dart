@@ -1,6 +1,8 @@
 import 'package:e_commerce/presention/home/views/home_view.dart';
 import 'package:flutter/material.dart';
 
+import 'theme.dart';
+
 void main() {
   runApp(const MainApp());
 }
@@ -10,8 +12,14 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
+    final theme = MaterialTheme(Theme.of(context).textTheme);
+    final lightTheme = theme.light();
+    final darkTheme = theme.dark();
+
+    return MaterialApp(
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      home: const Scaffold(
         body: Center(
           child:HomeView()
         ),
