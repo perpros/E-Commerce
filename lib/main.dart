@@ -1,3 +1,4 @@
+import 'package:e_commerce/presention/home/views/home_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MainApp extends StatelessWidget {
     return const MaterialApp(
       home: Scaffold(
         body: Center(
-          child: Text('Hello World!'),
+          child:HomeView()
         ),
       ),
     );
