@@ -5,7 +5,7 @@ class YourStyleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Text('Match Your Style',
+        style: Theme.of(context).textTheme.titleLarge);
   }
 }

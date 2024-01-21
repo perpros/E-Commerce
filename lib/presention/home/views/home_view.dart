@@ -10,14 +10,23 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: const [
-        AppbarWidget(),
-        YourStyleWidget(),
-        SearchWidget(),
-        TagsbarWidget(),
-        ProductsListWidget()
-      ],
+    return Scaffold(
+      primary: true,
+      body: Padding(
+        padding: const EdgeInsets.only(left: 30, right: 30),
+        child: ListView(
+          children: const [
+            SizedBox(height: 100, child: AppbarWidget()),
+            YourStyleWidget(),
+            SizedBox(height: 5),
+            SearchWidget(),
+            SizedBox(height: 20),
+            TagsbarWidget(),
+            SizedBox(height: 30),
+            ProductsListWidget()
+          ],
+        ),
+      ),
     );
   }
 }
