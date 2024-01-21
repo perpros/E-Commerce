@@ -8,7 +8,13 @@ class TitledAppbarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        const BackButtonWidget(),
+        Text('My Cart', style: Theme.of(context).textTheme.titleLarge),
+        const AvatarWidget(),
+      ],
+    );
   }
 }
