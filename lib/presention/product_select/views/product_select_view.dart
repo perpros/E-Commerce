@@ -1,3 +1,6 @@
+import 'package:e_commerce/presention/product_select/views/add_to_cart_widget.dart';
+import 'package:e_commerce/presention/product_select/views/selected_product_widget.dart';
+import 'package:e_commerce/presention/widgets/appbar_widget.dart';
 import 'package:flutter/material.dart';
 
 class ProductSelectView extends StatelessWidget {
@@ -5,6 +8,14 @@ class ProductSelectView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: ListView(
+        children: const [
+          SizedBox(height: 100, child: AppbarWidget()),
+          SelectedProductWidget(),
+          AddToCartWidget(),
+        ],
+      ),
+    );
   }
 }
