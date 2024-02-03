@@ -11,7 +11,12 @@ class ProductSelectView extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: const [
-          SizedBox(height: 100, child: AppbarWidget()),
+          SizedBox(
+              height: 100,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30),
+                child: AppbarWidget(),
+              )),
           SelectedProductWidget(),
           AddToCartWidget(),
         ],
