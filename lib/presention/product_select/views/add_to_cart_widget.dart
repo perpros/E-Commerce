@@ -7,7 +7,7 @@ class AddToCartWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return  UnconstrainedBox(
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20),
+        padding: const EdgeInsets.only(top: 56,bottom: 20),
         child: SizedBox(
             height: 65,
             width: 352,
