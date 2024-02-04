@@ -1,5 +1,6 @@
-import 'package:e_commerce/presention/widgets/product_widget.dart';
 import 'package:flutter/material.dart';
+
+import '../../widgets/product_widget.dart';
 
 class ProductsListWidget extends StatelessWidget {
   const ProductsListWidget({super.key});
@@ -11,8 +12,7 @@ class ProductsListWidget extends StatelessWidget {
       child: GridView.count(
           crossAxisCount: 2,
           primary: true,
-          
-          physics:const BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           mainAxisSpacing: 20,
           crossAxisSpacing: 20,
           childAspectRatio: 0.55,
