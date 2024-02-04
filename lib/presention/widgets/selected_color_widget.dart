@@ -1,5 +1,6 @@
-import 'package:e_commerce/presention/widgets/color_widget.dart';
 import 'package:flutter/material.dart';
+
+import 'color_widget.dart';
 
 class SelectedColorWidget extends StatelessWidget {
   const SelectedColorWidget(this.color, {super.key});

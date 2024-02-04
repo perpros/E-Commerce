@@ -1,7 +1,7 @@
-import 'package:e_commerce/presention/widgets/size_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'color_widget.dart';
+import 'size_widget.dart';
 
 class OrderWidget extends StatelessWidget {
   const OrderWidget({

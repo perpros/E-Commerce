@@ -1,8 +1,9 @@
-import 'package:e_commerce/presention/widgets/color_widget.dart';
-import 'package:e_commerce/presention/widgets/selected_color_widget.dart';
-import 'package:e_commerce/presention/widgets/selected_size_widget.dart';
-import 'package:e_commerce/presention/widgets/size_widget.dart';
 import 'package:flutter/material.dart';
+
+import '../../widgets/color_widget.dart';
+import '../../widgets/selected_color_widget.dart';
+import '../../widgets/selected_size_widget.dart';
+import '../../widgets/size_widget.dart';
 
 class SelectedProductWidget extends StatelessWidget {
   const SelectedProductWidget({super.key});
@@ -191,21 +192,6 @@ class _ColorsLineWidgetState extends State<ColorsLineWidget> {
               }
             },
           ))
-      // const Row(
-      //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //     children: [
-      //       SelectedColorWidget(Colors.grey),
-      //       SizedBox(width: 15),
-      //       ColorWidget(color: Colors.red),
-      //       SizedBox(width: 15),
-      //       ColorWidget(color: Colors.blue),
-      //       SizedBox(width: 15),
-      //       ColorWidget(color: Colors.brown),
-      //       SizedBox(width: 15),
-      //       ColorWidget(color: Colors.green),
-      //       SizedBox(width: 15),
-      //       ColorWidget(color: Colors.black),
-      //     ])
     ]);
   }
 }
