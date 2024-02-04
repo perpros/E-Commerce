@@ -32,14 +32,6 @@ class ProductsListWidget extends StatelessWidget {
                   price: '\$34.5'),
             ),
             ...List.generate(
-              3,
-              (index) => const ProductWidget(
-                  image:
-                      'assets/image/Screen Shot 2022-07-28 at 7.22.40 PM.png',
-                  name: 'Jacket Jeans',
-                  price: '\$34.5'),
-            ),
-            ...List.generate(
               9,
               (index) => const ProductWidget(
                   image: 'assets/image/Product_3png.png',
