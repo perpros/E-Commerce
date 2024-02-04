@@ -5,6 +5,7 @@ import 'package:e_commerce/presention/my_card/views/orders_list_widget.dart';
 import 'package:e_commerce/presention/my_card/views/total_widget.dart';
 import 'package:e_commerce/presention/my_card/views/checkout_button.dart';
 import 'package:e_commerce/presention/widgets/titled_appbar_widget.dart';
+import 'package:e_commerce/presention/widgets/order_widget.dart';
 
 void main() {
   testWidgets('03_MyCart Screen', (tester) async {
