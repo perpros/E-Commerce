@@ -21,7 +21,7 @@ class MainApp extends StatelessWidget {
       darkTheme: darkTheme,
       home: const Scaffold(
         body: Center(
-          child:HomeView()
+          child: Text('Hello World!'),
         ),
       ),
     );
