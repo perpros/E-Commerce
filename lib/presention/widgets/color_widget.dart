@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
-class ColorWidget extends StatelessWidget{
-  const ColorWidget({super.key, this.color});
-  final Color? color ;
+class ColorWidget extends StatelessWidget {
+  const ColorWidget({super.key, this.color, this.selectColor});
+  final Color? color;
+  final Function()? selectColor;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 36,
-      width: 36,
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(36)
+    return InkWell(
+      onTap: () {
+        selectColor!();
+      },
+      child: Container(
+        height: 36,
+        width: 36,
+        decoration: BoxDecoration(
+            color: color, borderRadius: BorderRadius.circular(36)),
       ),
     );
   }
