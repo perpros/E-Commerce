@@ -14,27 +14,39 @@ class ProductWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Stack(children: [
-          Image.asset(image),
-          const Positioned(right: 12, top: 12, child: FavoriteWidget())
-        ]),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              name,
-              style: Theme.of(context).textTheme.bodyMedium,
+    return Stack(alignment: Alignment.center, children: [
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(20.0),
+            child: Image.asset(
+              image,
+              fit: BoxFit.fitWidth,
+              alignment: Alignment.center,
             ),
-            Text(
-              price,
-              style: Theme.of(context).textTheme.bodyMedium,
-            )
-          ],
-        )
-      ],
-    );
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                name,
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+              Text(
+                price,
+                style: Theme.of(context).textTheme.bodyMedium,
+              )
+            ],
+          ),
+        ],
+      ),
+      const Positioned(
+        right: 12,
+        top: 12,
+        child: FavoriteWidget(),
+      ),
+    ]);
   }
 }
