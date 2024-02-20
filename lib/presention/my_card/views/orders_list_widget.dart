@@ -8,9 +8,20 @@ class OrdersListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+
+      height: 435,
       child: ListView.builder(
+        itemCount: 3,
         itemBuilder: (context, index) {
-          return const OrderWidget();
+          return const Padding(
+            padding: EdgeInsets.only(bottom: 30),
+            child: OrderWidget(
+              name: 'Jacket Jeans',
+              price: '\$37.9',
+              image: 'assets/image/attractive.png',
+              color: Colors.green,
+            ),
+          );
         },
       ),
     );
