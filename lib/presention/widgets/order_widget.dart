@@ -18,51 +18,62 @@ class OrderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Image.asset(image),
-        const SizedBox(width: 15),
-        Expanded(
-            child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  name,
-                  style: Theme.of(context).textTheme.bodyMedium,
-                ),
-                Text(
-                  price,
-                  style: Theme.of(context).textTheme.bodyMedium,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    ColorWidget(color: color),
-                    const SizedBox(width: 15),
-                    const SizeWidget('S')
-                  ],
-                )
-              ],
-            ),
-            Align(
-              alignment: Alignment.topLeft,
-              child: InkWell(
-                borderRadius: BorderRadius.circular(20),
-                onTap: () {},
-                child: Icon(
-                  Icons.delete_outline,
-                  color: Theme.of(context).colorScheme.primary,
-                  size: 36,
+    return SizedBox(
+      height: 125,
+      child: Row(
+        children: [
+          ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset(
+                image,
+                width: 95,
+                height: 125,
+                fit: BoxFit.cover,
+              )),
+          const SizedBox(width: 15),
+          Expanded(
+              child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    name,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                  Text(
+                    price,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      ColorWidget(color: color),
+                      const SizedBox(width: 15),
+                      const SizeWidget('S')
+                    ],
+                  )
+                ],
+              ),
+              Align(
+                alignment: Alignment.topLeft,
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(20),
+                  onTap: () {},
+                  child: Icon(
+                    Icons.delete_outline,
+                    color: Theme.of(context).colorScheme.primary,
+                    size: 36,
+                  ),
                 ),
               ),
-            ),
-          ],
-        ))
-      ],
+            ],
+          ))
+        ],
+      ),
     );
   }
 }
