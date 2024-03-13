@@ -10,7 +10,6 @@ class DioProvider {
         .get(url,
             options: Options(responseType: ResponseType.json, method: 'Get'))
         .then((response) {
-      log(response.toString() as num);
       return response;
     });
   }

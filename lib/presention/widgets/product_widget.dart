@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import 'favorite_widget.dart';
 
@@ -10,7 +12,7 @@ class ProductWidget extends StatelessWidget {
       required this.price});
   final String image;
   final String name;
-  final String price;
+  final double price;
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +21,24 @@ class ProductWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20.0),
-            child: Image.asset(
-              image,
-              fit: BoxFit.fitWidth,
-              alignment: Alignment.center,
-            ),
-          ),
+          CachedNetworkImage(
+              imageUrl: image,
+              imageBuilder: (context, imageProvider) {
+                return ClipRRect(
+                  borderRadius: BorderRadius.circular(20.0),
+                  child: Image.network(
+                    image,
+                    fit: BoxFit.fitWidth,
+                    alignment: Alignment.center,
+                  ),
+                );
+              },
+              placeholder: (context, url) {
+                return  SpinKitCircle(color: Theme.of(context).colorScheme.primary, size: 40);
+              },
+              errorWidget: (context, url, error) => const Icon(Icons.image_not_supported_outlined)
+                
+                  ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -35,7 +47,7 @@ class ProductWidget extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               Text(
-                price,
+                price.toString(),
                 style: Theme.of(context).textTheme.bodyMedium,
               )
             ],
